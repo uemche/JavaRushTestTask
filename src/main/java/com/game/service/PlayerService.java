@@ -48,9 +48,9 @@ public class PlayerService {
             Integer maxLevel,
             PlayerOrder order
     ) {
-        final Date afterDate = after == null ? null : new Date(after);
-        final Date beforeDate = before == null ? null : new Date(before);
-        final List<Player> players = new ArrayList<>();
+        Date afterDate = after == null ? null : new Date(after);
+        Date beforeDate = before == null ? null : new Date(before);
+        List<Player> players = new ArrayList<>();
         playerRepository.findAll().forEach(player -> {
             if (name != null && !player.getName().contains(name)) return;
             if (title != null && !player.getTitle().contains(title)) return;
